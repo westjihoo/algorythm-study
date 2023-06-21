@@ -1,3 +1,5 @@
+# https://school.programmers.co.kr/learn/courses/30/lessons/64061
+
 def solution(board, moves):
     answer = 0
     basket = []
@@ -12,7 +14,7 @@ def solution(board, moves):
                     poped = basket.pop()
                     if poped == board[h][move-1] :
                         board[h][move-1] = 0
-                        answer += 1
+                        answer += 2
                     else :
                         basket.append(poped)
                         basket.append(board[h][move-1])
@@ -20,7 +22,6 @@ def solution(board, moves):
                 else :
                     basket.append(board[h][move-1])
                     board[h][move-1] = 0
-        print(basket)
 
     return answer
 
@@ -31,6 +32,8 @@ board = [[0,0,0,0,0],
          [4,2,4,4,2],
          [3,5,1,3,1]]
 moves = [1,5,3,5,1,2,1,4]
+
+        # 4 3 1 1 3 2 X 4
 r = 4
 
 print(solution(board, moves))
