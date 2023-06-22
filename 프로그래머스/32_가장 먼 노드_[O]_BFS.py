@@ -12,7 +12,7 @@ def solution(n, edge):
     path = [1]
 
     while path :
-        cur = path.pop()
+        cur = path.pop(0)
         for can_go in graph[cur] :
             if distance[can_go] == 0 :
                 distance[can_go] = distance[cur] + 1
